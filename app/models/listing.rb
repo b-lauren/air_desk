@@ -1,4 +1,4 @@
 class Listing < ApplicationRecord
   has_many_attached :photos
-  validates :location, :description, :title, :price, presence: true
+  validates :description, :title, :price, presence: true
 end
