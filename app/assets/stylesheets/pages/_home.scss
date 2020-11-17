@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+
+// Color variables
+$navy: #1E2437;
+$red: #EA4747;
+$blue: #5002FF;
+$grey: #F4F4F5;
+
+// new scheme
+$lightblue: #43A8E4;
+$teal: #6ADBC4;
+$green: #5BB77C;
+
+
+body {
+  background: $grey;
+}
+
+.sign-up {
+  background: $teal;
+  color: white;
+  border-radius: 8px;
+  margin-left: 28px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
