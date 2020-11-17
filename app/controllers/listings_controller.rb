@@ -28,7 +28,8 @@ class ListingsController < ApplicationController
       :postcode,
       :city,
       :available,
-      :rate
+      :rate,
+      :photos
     )
   end
 end
