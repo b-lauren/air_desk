@@ -51,12 +51,15 @@ ActiveRecord::Schema.define(version: 2020_11_17_113528) do
   create_table "listings", force: :cascade do |t|
     t.text "description"
     t.string "title"
-    t.string "location"
     t.boolean "available"
     t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "postcode"
+    t.string "city"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
