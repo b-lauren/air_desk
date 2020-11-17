@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <span class="navbar-brand">AIR DESK</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -6,7 +6,13 @@
 
 <ul class="navbar-nav mr-auto">
   <li class="nav-item active">
+    <a class="nav-link" href="#">About</a>
+  </li>
+  <li class="nav-item active">
     <a class="nav-link" href="#">Listings</a>
+  </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="#">Contact</a>
   </li>
 </ul>
 
@@ -41,7 +47,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+        </li>
+         <li class="nav-item">
+          <%= link_to "Sign Up", new_user_session_path, class: "nav-link btn sign-up text-white px-3" %>
         </li>
       <% end %>
     </ul>
