@@ -1,32 +1,37 @@
 require 'open-uri'
 require 'json'
+require 'faker'
 
-# user = User.create(
-#   email: 'john@test.com',
-#   first_name: 'John',
-#   last_name: 'Joubert',
-#   password: 'test123456'
-# )
+PROPERTY_SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing one-of-a-kind]
+PROPERTY_NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale tree-lined historic picturesque safe]
 
-user = User.first
+20.times do |i|
 
-unsplash_url = "https://api.unsplash.com/search/photos/?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=50&query=home%20office"
+  user = User.create(
+    email: Faker::Internet.email,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password: 'test123456'
+  )
 
-file_serialized = URI.open(unsplash_url)
-file = JSON.parse(file_serialized.read)
-photo = URI.open(file['results'][0]['urls']['regular'])
+  unsplash_url = "https://api.unsplash.com/search/photos/?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=50&query=home%20office"
 
-listing = Listing.new(
-  description: 'Some description',
-  title: 'Some title',
-  available: true,
-  rate: 50,
-  address_line_1: 'My address',
-  address_line_2: 'My address',
-  postcode: 'My address',
-  city: 'My address'
-)
+  file_serialized = URI.open(unsplash_url)
+  file = JSON.parse(file_serialized.read)
+  photo = URI.open(file['results'][i]['urls']['regular'])
 
-listing.user = user
-listing.photos.attach(io: photo, filename: 'unsplash.jpg', content_type: 'image/jpg')
-listing.save!
+  listing = Listing.new(
+    title: "#{PROPERTY_SPACE_ADJECTIVES.sample.capitalize} space in #{PROPERTY_NEIGHBOURHOOD_ADJECTIVES.sample} neighborhood",
+    description: 'Placeholder description',
+    available: true,
+    rate: Faker::Number.between(from: 60, to: 2000),
+    address_line_1: Faker::Address.street_address,
+    address_line_2: Faker::Address.secondary_address,
+    postcode: Faker::Address.postcode,
+    city: Faker::Address.city
+  )
+
+  listing.user = user
+  listing.photos.attach(io: photo, filename: 'unsplash.jpg', content_type: 'image/jpg')
+  listing.save!
+end
