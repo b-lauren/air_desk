@@ -5,6 +5,11 @@ ruby '2.6.6'
 
 gem 'devise'
 
+# We don’t want to share secret keys on Github, we can use the dotenv gem for security
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary', '~> 1.16.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
