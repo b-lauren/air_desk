@@ -29,7 +29,7 @@ class ListingsController < ApplicationController
       :city,
       :available,
       :rate,
-      :photos
+      photos: []
     )
   end
 end
