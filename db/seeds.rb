@@ -5,6 +5,21 @@ require 'faker'
 PROPERTY_SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing one-of-a-kind]
 PROPERTY_NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale tree-lined historic picturesque safe]
 
+puts 'Starting seed file...'
+puts 'Clearing Users...'
+
+User.destroy_all
+
+puts 'Clearing Listings....'
+
+Listing.destroy_all
+
+puts 'Clearing Bookings....'
+
+Booking.destroy_all
+
+puts 'Creating new seeds...'
+
 20.times do |i|
 
   user = User.create(
@@ -24,7 +39,7 @@ PROPERTY_NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale tree-lined h
     title: "#{PROPERTY_SPACE_ADJECTIVES.sample.capitalize} space in #{PROPERTY_NEIGHBOURHOOD_ADJECTIVES.sample} neighborhood",
     description: 'Placeholder description',
     available: true,
-    rate: Faker::Number.between(from: 60, to: 2000),
+    rate: Faker::Number.between(from: 10, to: 85),
     address_line_1: Faker::Address.street_address,
     address_line_2: Faker::Address.secondary_address,
     postcode: Faker::Address.postcode,
