@@ -1,14 +1,13 @@
-<h1>All Listings</h1>
 
-<% if @listings.empty? %>
-  <p>No listings added yet.</p>
-<% else %>
-  <ul>
+<div class="container">
+  <div class="cards rounded card-img-top">
   <% @listings.each do |listing| %>
-    <li>
-    <%= listing.title %>
-    </li>
-  <% end %>
-  </ul>
-<% end %>
+    <div class="card text-center" style="width: 19rem;">
+      <%= cl_image_tag listing.photos[0].key, width: 302, height: 200, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to listing.title.capitalize, listing_path(listing) %> </h5>
 
+         </div>
+    </div>
+  <% end %>
+</div>
