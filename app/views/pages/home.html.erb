@@ -18,78 +18,16 @@
 
 <!-- Listing Section -->
 
-<div class="container mt-5">
-  <div class="row align-items-center">
-    <div class="col-12 col-lg-12">
-      <div class="container container-fluid py-3 mt-4">
-    <h2 class="h3">View Some of Our Favorite Desks</h2>
-    <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1520908695049-da13395b27a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
+
+
+<div class="container">
+  <div class="cards rounded card-img-top">
+  <% @listings.first(6).each do |listing| %>
+    <div class="card text-center" style="width: 19rem;">
+      <%= cl_image_tag listing.photos[0].key, width: 302, height: 200, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to listing.title.capitalize, listing_path(listing) %> </h5>
+         </div>
     </div>
+  <% end %>
 </div>
-<div class="container-fluid container py-3 mt-4">
-    <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1520908695049-da13395b27a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img class="img-card" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Desk Description ...</p>
-                    <p class="card-text">Price</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-    </div>
-      </div>
