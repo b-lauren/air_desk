@@ -2,25 +2,38 @@ require 'open-uri'
 require 'json'
 require 'faker'
 
-PROPERTY_SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing one-of-a-kind]
-PROPERTY_NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale tree-lined historic picturesque safe]
+SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing one-of-a-kind]
+NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale beautiful historic picturesque safe]
+HOME_SYNONYMS = %w[home room building study house manor castle bedroom lounge]
 
 puts 'Starting seed file...'
-puts 'Clearing Users...'
-
-User.destroy_all
-
-puts 'Clearing Listings....'
-
-Listing.destroy_all
 
 puts 'Clearing Bookings....'
 
 Booking.destroy_all
 
-puts 'Creating new seeds...'
+puts 'Bookings destroyed....'
 
-20.times do |i|
+puts 'Clearing Listings....'
+
+Listing.destroy_all
+
+puts 'Listings destroyed....'
+
+puts 'Clearing Users...'
+
+User.destroy_all
+
+puts 'Users destroyed....'
+
+puts 'Creating new users, listings and bookings...'
+
+unsplash_url = "https://api.unsplash.com/search/photos/?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=50&query=home%20desk"
+
+file_serialized = URI.open(unsplash_url)
+file = JSON.parse(file_serialized.read)
+
+25.times do |i|
 
   user = User.create(
     email: Faker::Internet.email,
@@ -29,17 +42,20 @@ puts 'Creating new seeds...'
     password: 'test123456'
   )
 
-  unsplash_url = "https://api.unsplash.com/search/photos/?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=50&query=home%20office"
+  puts "Created User: #{user.first_name} (id: #{user.id})"
 
-  file_serialized = URI.open(unsplash_url)
-  file = JSON.parse(file_serialized.read)
+
   photo = URI.open(file['results'][i]['urls']['regular'])
 
+  space_adjective = SPACE_ADJECTIVES.sample
+  neighbourhood_adjective = NEIGHBOURHOOD_ADJECTIVES.sample
+  home_synonym = HOME_SYNONYMS.sample
+
   listing = Listing.new(
-    title: "#{PROPERTY_SPACE_ADJECTIVES.sample.capitalize} space in #{PROPERTY_NEIGHBOURHOOD_ADJECTIVES.sample} neighborhood",
-    description: 'Placeholder description',
+    title: "#{space_adjective.capitalize} space in #{neighbourhood_adjective} #{home_synonym}",
+    description: "This #{space_adjective} space is ideal for someone looking to spend the day working productively. You'll love spending time in this #{neighbourhood_adjective} #{home_synonym}, where a you'll be provided with a desk, chair and free coffee and tea. Book now to avoid dissapointment.",
     available: true,
-    rate: Faker::Number.between(from: 10, to: 85),
+    rate: Faker::Number.between(from: 5, to: 65),
     address_line_1: Faker::Address.street_address,
     address_line_2: Faker::Address.secondary_address,
     postcode: Faker::Address.postcode,
@@ -49,4 +65,22 @@ puts 'Creating new seeds...'
   listing.user = user
   listing.photos.attach(io: photo, filename: 'unsplash.jpg', content_type: 'image/jpg')
   listing.save!
+
+  puts "Created Listing: #{listing.title} (id: #{listing.id})"
+
+  booking_date = Faker::Date.forward(days: 23)
+  booking = Booking.new(
+    start_date: booking_date,
+    end_date: booking_date + rand(1..10)
+  )
+  booking.user = User.offset(rand(User.count)).first
+  booking.listing = listing
+  booking.save
+
+  puts "Created Booking for Listing: #{listing.title} (Booking id: #{booking.id})"
 end
+
+puts "Finished."
+puts "Created #{User.count} Users"
+puts "Created #{Listing.count} Listings"
+puts "Created #{Booking.count} Bookings"
