@@ -19,15 +19,19 @@
 <!-- Listing Section -->
 
 
-
-<div class="container">
+<div class="container best-desks">
+  <div class="favourite-desks pb-4">
+    <h4 class="text-center">View Our Favourite Desks</h4>
+  </div>
   <div class="cards rounded card-img-top">
-  <% @listings.first(6).each do |listing| %>
+  <% @listings.last(6).each do |listing| %>
     <div class="card text-center" style="width: 19rem;">
+      <%= link_to listing_path(listing) do %>
       <%= cl_image_tag listing.photos[0].key, width: 302, height: 200, crop: :fill %>
         <div class="card-body">
-          <h5 class="card-title"><%= link_to listing.title.capitalize, listing_path(listing) %> </h5>
+          <h5 class="card-title"><%= listing.title.capitalize %> </h5>
          </div>
+      <% end %>
     </div>
   <% end %>
 </div>
