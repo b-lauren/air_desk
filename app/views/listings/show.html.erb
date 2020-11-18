@@ -1,24 +1,17 @@
-<div class="container">
+<div class="container single-listing">
   <div>
     <div class="mt-5">
         <h3>Desk Details</h3>
         <p> <%= @listing.title %></p>
-         <p> <%= @listing.description %></p>
          <p> <%= @listing.city %></p>
          <p> £ <%= @listing.rate %> per day</p>
 
-
-
-
-
-
-
-  <%= cl_image_tag @listing.photos.first.key, height: 300, width: 400, crop: :fill %>
+         <%= cl_image_tag @listing.photos.first.key, height: 300, width: 400, crop: :fill %>
 
   </div>
-  <div>
-      <p><%= link_to "Book this desk", listings_path %></p>
-      <p><%= link_to "Back to desks", listings_path %></p>
+  <div class="booking-btn-centre d-flex justify-content-center">
+      <p><%= link_to "Book this desk",  new_listing_booking_path(@listing), class: "btn sign-up" %></p>
+      <p><%= link_to "Back to desks", listings_path, class: "btn sign-up" %></p>
   </div>
   </div>
 </div>
