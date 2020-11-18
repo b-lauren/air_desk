@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container margin-top">
   <div class="row">
     <h2>Book this space </h2>
   </div>
@@ -9,7 +9,7 @@
       <%= cl_image_tag @listing.photos.first.key, height: 300, width: 400, crop: :fill %>
     </div>
     <div class="col-6">
-      <%= render 'booking_form' %>
+      <%= render 'booking_form', class: "sign-up" %>
     </div>
 
   </div>
