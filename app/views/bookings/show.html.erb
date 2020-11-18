@@ -1,17 +1,20 @@
-<div class="booking-new-card">
+<div class="booking-new-card margin-top">
 
  <%= cl_image_tag @listing.photos[0].key, width: 302, height: 400, crop: :fill %>
 
   <div class="booking-new-infos">
-    <h2>Product name</h2>
-    <h3>Booking Details</h3>
+    <h3>Congrats! You're Booked In</h3>
         <p> <%= @listing.title %></p>
         <p> <%= @listing.description %></p>
-        <p> <%= @listing.city %></p>
+        <p>Location: <%= @listing.city %></p>
         <p> £ <%= @listing.rate %> per day</p>
-        <p> <%= @booking.start_date %></p>
-        <p> <%= @booking.end_date %></p>
+        <p>You are booked from: <%= @booking.start_date %></p>
+        <p>You are leaving on: <%= @booking.end_date %></p>
+        <div class="back-button">
+          <%= link_to "Back to Home", root_path, class: "sign-up back-button" %>
+        </div>
   </div>
 </div>
 
-  <%= link_to "Back to Home", root_path %>
+
+
