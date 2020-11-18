@@ -1,1 +1,17 @@
-<%= render 'booking_form' %>
+<div class="container mt-5">
+  <div class="row">
+    <h2>Book this space </h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h4><%= @listing.title %></h4>
+      <p>£ <%= @listing.rate %> per day</p>
+      <%= cl_image_tag @listing.photos.first.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="col-6">
+      <%= render 'booking_form' %>
+    </div>
+
+  </div>
+</div>
+
