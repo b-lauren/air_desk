@@ -3,4 +3,6 @@ class Listing < ApplicationRecord
   validates :description, :title, :rate, presence: true
   belongs_to :user
   has_many :bookings
+  geocoded_by :address_line_1
+  after_validation :geocode, if: :will_save_change_to_address_line_1?
 end
