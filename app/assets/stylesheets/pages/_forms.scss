@@ -1,5 +1,5 @@
 .margin-top {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .sign-up-form {
@@ -42,16 +42,18 @@
 
 .new-listing-form {
   border-radius: 5px;
-  border: 2px solid grey;
-  padding: 15px 0;
+  padding: 30px 0;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
 }
+
 
 .new-listing-image {
   width: 50%;
   background-image: url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80');
   background-size: cover;
   opacity: 70%;
-  // text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -81,7 +83,6 @@
 
 .new-listing-wrapper {
   width: 50%;
-  // padding: 20px 40px;
 }
 
 .create-listing-button {
@@ -89,10 +90,13 @@
   padding: 6px;
   border: 1px solid $red;
   color: white;
-  margin-top: 8px;
+  margin-top: 18px;
+  border-radius: 8px;
+
+  &:hover {
+    color: black;
+  }
 }
-
-
 
 
 .banner {
@@ -121,4 +125,9 @@
 
 .banner-flex-wrapper {
   display: flex;
+}
+
+h2 {
+  font-size: 38px;
+  margin-top: 10px;
 }
