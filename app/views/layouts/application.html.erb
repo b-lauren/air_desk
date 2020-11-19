@@ -15,12 +15,24 @@
   </head>
 
   <body>
-    <!-- app/views/layouts/application.html.erb -->
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
 
-    <div class="container-fluid mt-4">
-    <%= yield %>
+    <!-- app/views/layouts/application.html.erb -->
+
+
+
+
+  <div class="page-container">
+    <div class="navbar-container"><%= render "shared/navbar" %>
+
     </div>
+    <div class="content-container">
+       <%= render 'shared/flashes' %>
+      <%= yield %>
+
+    </div>
+    <div class="footer-container"><%= render "shared/footer" %></div>
+  </div>
+
+
   </body>
 </html>
