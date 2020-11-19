@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :listings do
-    resources :bookings, except: [:destroy]
+    resources :bookings, except: [:index, :destroy]
   end
 
-  get 'bookings', to: 'bookings#owner_index'
-  delete 'bookings/:id', to: 'bookings#destroy'
+  resources :bookings, only: [:index, :destroy]
 end

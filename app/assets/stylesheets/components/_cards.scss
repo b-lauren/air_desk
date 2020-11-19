@@ -55,8 +55,15 @@
   color: black;
 }
 
-.single-listing-card {
-  margin-top: 24px;
-  padding-top: 20px;
-}
+.card  {
+  border-radius: 10px;
 
+  a {
+    text-decoration: none;
+  }
+
+  :hover {
+    background-color: #F4F4F5;
+    transition-delay: 0.10s;
+  }
+}
