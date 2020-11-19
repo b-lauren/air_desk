@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
-  before_action :set_listing, only: [:new, :create, :edit, :update ]
+  before_action :set_listing, only: [:create, :edit, :update]
 
   def index
     @bookings = Booking.where(user_id: current_user)
@@ -14,10 +14,6 @@ class BookingsController < ApplicationController
   def show
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.find(params[:id])
-  end
-
-  def new
-    @booking = Booking.new
   end
 
   def create

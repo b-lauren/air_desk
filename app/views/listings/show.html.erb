@@ -1,5 +1,4 @@
 <div class="container single-listing">
-  <div>
     <div class="mt-5">
         <h3>Desk Details</h3>
         <p> <%= @listing.title %></p>
@@ -14,4 +13,6 @@
       <p><%= link_to "Back to desks", listings_path, class: "btn sign-up" %></p>
   </div>
   </div>
+
+        <%= render 'bookings/booking_form', class: "sign-up" %>
 </div>
