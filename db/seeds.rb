@@ -50,13 +50,14 @@ file = JSON.parse(file_serialized.read)
   space_adjective = SPACE_ADJECTIVES.sample
   neighbourhood_adjective = NEIGHBOURHOOD_ADJECTIVES.sample
   home_synonym = HOME_SYNONYMS.sample
-
+  addresses = ["Oxford street, London", "Finsbury Park, London", "London Bridge", "Regent Street, London",
+  "Bond Street, London", "Baker Street, London"]
   listing = Listing.new(
     title: "#{space_adjective.capitalize} space in #{neighbourhood_adjective} #{home_synonym}",
     description: "This #{space_adjective} space is ideal for someone looking to spend the day working productively. You'll love spending time in this #{neighbourhood_adjective} #{home_synonym}, where a you'll be provided with a desk, chair and free coffee and tea. Book now to avoid dissapointment.",
     available: true,
     rate: Faker::Number.between(from: 5, to: 65),
-    address_line_1: Faker::Address.street_address,
+    address_line_1: addresses.sample,
     address_line_2: Faker::Address.secondary_address,
     postcode: Faker::Address.postcode,
     city: Faker::Address.city

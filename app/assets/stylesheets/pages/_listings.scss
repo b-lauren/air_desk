@@ -16,6 +16,25 @@
 
  }
 
-.container single-listing {
+.main-container {
   display: flex;
+}
+
+.map-container {
+  flex: 0 0 400px;
+  padding-left: 16px;
+  #map {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.index-cards {
+  flex: 1;
+}
+
+.cards-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
