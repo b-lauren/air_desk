@@ -1,0 +1,4 @@
+<%= simple_form_for [owner_booking.listing, owner_booking] do |f| %>
+  <%= f.input :approved, :as => :hidden, :input_html => { value: true } %>
+  <%= f.submit 'Approve' %>
+<% end %>

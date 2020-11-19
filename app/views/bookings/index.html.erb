@@ -1,0 +1,33 @@
+<div class="container margin-top">
+  <h3>Welcome, <%= current_user.first_name %></h3>
+
+  <h3>Your upcoming bookings</h3>
+  <div class="cards rounded card-img-top">
+    <% @bookings.each do |booking| %>
+      <div class="card text-center" style="width: 19rem;">
+        <%= cl_image_tag booking.listing.photos[0].key, width: 302, height: 200, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= booking.listing.title %></h5>
+          <p>Start date:<%= booking.start_date %></p>
+          <p>End date: <%= booking.end_date %></p>
+          <p><%= booking.approved ? 'Owner has approved' : 'Pending approval' %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h3>Booking for listings you own</h3>
+    <div class="cards rounded card-img-top">
+      <% @owner_bookings.each do |owner_booking| %>
+        <div class="card text-center" style="width: 19rem;">
+          <%= cl_image_tag owner_booking.listing.photos[0].key, width: 302, height: 200, crop: :fill %>
+          <div class="card-body">
+            <h5 class="card-title"><%= owner_booking.listing.title %></h5>
+            <p>Start date:<%= owner_booking.start_date %></p>
+            <p>End date: <%= owner_booking.end_date %></p>
+            <%= render 'approval_form', owner_booking: owner_booking %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
