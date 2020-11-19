@@ -8,11 +8,6 @@ class BookingsController < ApplicationController
     @owner_bookings = owner_listings.map(&:bookings).flatten
   end
 
-  # def owner_index
-  #   owner_listings = current_user.listings
-  #   @owner_bookings = owner_listings.map(&:bookings).flatten
-  # end
-
   def show; end
 
   def new
@@ -43,7 +38,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
   private

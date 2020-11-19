@@ -7,6 +7,5 @@ Rails.application.routes.draw do
     resources :bookings, except: [:index, :destroy]
   end
 
-  get 'bookings', to: 'bookings#index'
-  delete 'bookings/:id', to: 'bookings#destroy'
+  resources :bookings, only: [:index, :destroy]
 end

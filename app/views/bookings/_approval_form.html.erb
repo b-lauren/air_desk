@@ -1,4 +1,16 @@
-<%= simple_form_for [owner_booking.listing, owner_booking] do |f| %>
-  <%= f.input :approved, :as => :hidden, :input_html => { value: true } %>
-  <%= f.submit 'Approve' %>
+<% if owner_booking.approved %>
+
+  <%= simple_form_for [owner_booking.listing, owner_booking] do |f| %>
+    <%= f.input :approved, :as => :hidden, :input_html => { value: false } %>
+    <%= f.submit 'Mark as pending', class: "btn sign-up" %>
+  <% end %>
+
+<% else %>
+  <%= simple_form_for [owner_booking.listing, owner_booking] do |f| %>
+    <%= f.input :approved, :as => :hidden, :input_html => { value: true } %>
+    <%= f.submit 'Approve', class: "btn sign-up" %>
+  <% end %>
+
 <% end %>
+
+
