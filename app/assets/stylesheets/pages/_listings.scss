@@ -15,3 +15,26 @@
     margin-top: 25px;
 
  }
+
+.main-container {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+}
+
+.cards-map {
+  // flex-grow: 1;
+  width: 50%;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.map-container {
+  width: 50%;
+}
