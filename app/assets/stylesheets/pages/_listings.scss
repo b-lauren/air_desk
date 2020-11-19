@@ -20,21 +20,21 @@
   display: flex;
 }
 
-#map {
-  height: 100vh;
+.map-container {
+  flex: 0 0 400px;
+  padding-left: 16px;
+  #map {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.index-cards {
+  flex: 1;
 }
 
 .cards-map {
-  // flex-grow: 1;
-  width: 50%;
-}
-
-#map {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-.map-container {
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
