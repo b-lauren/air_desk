@@ -1,20 +1,17 @@
-<div class="container single-listing">
-  <div class="d-flex">
-    <div class="mt-5">
-        <h3>Desk Details</h3>
-        <p> <%= @listing.title %></p>
-         <p> <%= @listing.city %></p>
-         <p> £ <%= @listing.rate %> per day</p>
 
-         <%= cl_image_tag @listing.photos.first.key, height: 300, width: 400, crop: :fill %>
-      <div class="booking-btn-centre d-flex justify-content-center">
-        <p><%= link_to "Book this desk",  new_listing_booking_path(@listing), class: "btn sign-up" %></p>
-        <p><%= link_to "Back to desks", listings_path, class: "btn sign-up" %></p>
-      </div>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-8">
+      <%= cl_image_tag @listing.photos.first.key, height: 300, class: 'w-100 rounded', crop: :fill %>
+      <h3>Desk Details</h3>
+      <p> <%= @listing.title %> located in <strong><%= @listing.city %></strong></p>
+
+      <h6> £ <%= @listing.rate %> per day</p>
     </div>
-
-    <div class="single-listing-form">
-      <%= render 'bookings/booking_form', class: "sign-up" %>
+    <div class="col-4">
+      <div class="card p-4">
+      <%= render 'bookings/booking_form' %>
+      </div>
     </div>
   </div>
 </div>
