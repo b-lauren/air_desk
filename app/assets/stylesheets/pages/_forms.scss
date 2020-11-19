@@ -22,3 +22,103 @@
   flex-direction: column;
   align-items: center;
 }
+
+// get rid of ugly default styling
+
+// .new_listing {
+//   input[type="submit"], input[type="file"] {
+//     color: inherit;
+//     border: none;
+//     font: inherit;
+//     cursor: pointer;
+//     outline: inherit;
+//   }
+// }
+
+.new-listing-container {
+  display: flex;
+}
+
+
+.new-listing-form {
+  border-radius: 5px;
+  border: 2px solid grey;
+  padding: 15px 0;
+}
+
+.new-listing-image {
+  width: 50%;
+  background-image: url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80');
+  background-size: cover;
+  opacity: 70%;
+  // text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.listing-form {
+  width: 70%;
+  margin: 0 auto;
+  height: 80%;
+}
+
+.new-listing-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.form-group.file.optional.listing_photos {
+  margin-bottom: 0;
+}
+
+.border-radius-form {
+  border-radius: 10px;
+}
+
+.new-listing-wrapper {
+  width: 50%;
+  // padding: 20px 40px;
+}
+
+.create-listing-button {
+  background: $red;
+  padding: 6px;
+  border: 1px solid $red;
+  color: white;
+  margin-top: 8px;
+}
+
+
+
+
+.banner {
+  padding: 120px 0;
+  background-color: #F2EDE3;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-content {
+  width: 50%;
+}
+
+.banner-flex-wrapper {
+  display: flex;
+}
