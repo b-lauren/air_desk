@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row pt-5">
-    <div class="col-8">
+    <div class="col-8" class="single-listing-img">
       <%= cl_image_tag @listing.photos.first.key, height: 300, class: 'w-100 rounded', crop: :fill %>
       <h3>Desk Details</h3>
       <p> <%= @listing.title %> located in <strong><%= @listing.city %></strong></p>
