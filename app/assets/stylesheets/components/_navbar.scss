@@ -10,3 +10,17 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// instead of - navbar-brand
+.red-brand {
+  color: $red;
+  font-weight: 400;
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.red-brand:hover {
+  text-decoration: none;
+  color: #252426;
+}
+
