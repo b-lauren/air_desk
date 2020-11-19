@@ -55,4 +55,17 @@
   color: black;
 }
 
+.card  {
+  border-radius: 10px;
+
+  a {
+    text-decoration: none;
+  }
+
+  :hover {
+    background-color: #e0e0e0;
+    transition-delay: 0.10s;
+  }
+}
+
 
