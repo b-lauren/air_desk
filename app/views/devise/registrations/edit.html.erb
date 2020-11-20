@@ -1,42 +1,43 @@
 <div class="container margin-top">
-  <h1>Welcome, <%= current_user.first_name %></h1>
-  <p> You currently have <%= current_user.listings.count %> <%= 'listing'.pluralize(current_user.listings.count) %>. You also have <%= current_user.bookings.count %> <%= 'booking'.pluralize(current_user.bookings.count)%> coming up! </p>
-  <%= link_to 'View all', bookings_path %>
+  <div class="card p-4 mb-4">
 
-  <hr>
+      <h1>Welcome, <%= current_user.first_name %></h1>
+      <p> You currently have <%= current_user.listings.count %> <%= 'listing'.pluralize(current_user.listings.count) %>. You also have <%= current_user.bookings.count %> <%= 'booking'.pluralize(current_user.bookings.count)%> coming up! </p>
+      <%= link_to 'View all', bookings_path %>
 
-  <h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
+      <hr>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
+      <h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
 
-    <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+
+          <%= f.input :password,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
+
+        <div class="form-actions btn-signup">
+          <%= f.submit 'Update Profile', class: "btn sign-up ml-0" %>
+        </div>
       <% end %>
+      <hr>
 
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password" } %>
+      <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
     </div>
-
-    <div class="form-actions btn-signup">
-      <%= f.submit 'Update Profile', class: "btn sign-up" %>
-    </div>
-  <% end %>
-  <hr>
-
-  <h3>Cancel my account</h3>
-
-  <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-</div>
+  </div>
