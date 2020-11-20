@@ -27,6 +27,9 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user = current_user
+    @listing.latitude = @listing.latitude || 51.532999
+    @listing.longitude = @listing.longitude || -0.075308
+
     if @listing.save
       redirect_to listing_path(@listing)
     else
