@@ -8,7 +8,9 @@ class BookingsController < ApplicationController
     @owner_bookings = owner_listings.map(&:bookings).flatten
   end
 
-  def show; end
+  def show
+    @total_price = @listing.rate * (@booking.end_date.mjd - @booking.start_date.mjd)
+  end
 
   def create
     @booking = Booking.new(booking_params)
