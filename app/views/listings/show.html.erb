@@ -1,17 +1,16 @@
 
 <div class="container">
   <div class="row pt-5">
-    <div class="col-8" class="single-listing-img">
-      <%= cl_image_tag @listing.photos.first.key, height: 300, class: 'w-100 rounded', crop: :fill %>
-      <div class="card p-4">
-      <h3>Desk Details</h3>
-      <p> <%= @listing.title %> located in <strong><%= @listing.city %></strong></p>
-      <h5> <%= @listing.description %> </h5>
-      <h6> £ <%= @listing.rate %> per day</p>
+    <div class="col-6 single-listing-img mb-4">
+      <%= cl_image_tag @listing.photos.first.key, height: 300, class: 'w-100 rounded listings-show-image shadow', crop: :fill %>
+      <div class="card p-4 shadow">
+        <p> <%= @listing.title %> located in <strong><%= @listing.city %></strong></p>
+        <h5 class="mt-0"> <%= @listing.description %> </h5>
+        <p> £ <%= @listing.rate %> per day</p>
       </div>
     </div>
-    <div class="col-4">
-      <div class="card p-4">
+    <div class="col-5">
+      <div class="card p-4 shadow">
       <%= render 'bookings/booking_form' %>
       </div>
     </div>
