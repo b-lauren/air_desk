@@ -15,7 +15,7 @@
             <%= f.input :postcode, placeholder: "Postcode", label: false, input_html: {class: "border-radius-form"} %>
             <%= f.input :rate, placeholder: "Daily rate", label: false, input_html: {class: "border-radius-form"} %>
             <div class="new-listing-submit">
-              <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, input_html: {class: "photos-button"} %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, class: "photos-button" %>
             </div>
             <div class="submit-button">
                 <input  class="create-listing-button" type="submit" name="commit" value="Create Listing" data-disable-with="Create Listing">
