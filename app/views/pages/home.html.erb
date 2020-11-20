@@ -5,20 +5,26 @@
   <div class="row text-center align-items-center">
     <div class="col-lg-6">
       <div class="d-none d-lg-block main-text">
-         <h1>A Workspace Near You</h1>
-         <p class="text-center lead">Find the perfect workspace nearby and access unique and stylish work environments to suit your needs</p>
-
+        <h1>A Workspace Near You</h1>
+        <p class="text-center lead">Find the perfect workspace nearby and access unique and stylish work environments to suit your needs</p>
+       <div class="search-bar-container">
           <div class="search-bar-form">
             <%= form_tag listings_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control border-radius-form",
-                placeholder: "Find your new desk"
-              %>
-              <%= submit_tag "Search", class: "btn btn-primary" %>
-            <% end %>
-        </div>
-
+            <div class="d-flex">
+              <div class="search-function">
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control border-radius-form",
+                  placeholder: "Search by keyword or address"
+                  %>
+                </div>
+                <div class="search-submit">
+                <%= submit_tag "Find Desk", class: "btn sign-up" %>
+                <% end %>
+              </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="col-lg-6">
