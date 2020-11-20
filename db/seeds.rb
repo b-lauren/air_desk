@@ -6,6 +6,8 @@ SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing 
 NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale beautiful historic picturesque safe]
 HOME_SYNONYMS = %w[home room building study house manor castle bedroom lounge]
 
+ADDRESSES = ["Oxford street, London", "Finsbury Park, London", "London Bridge", "Regent Street, London", "Bond Street, London", "Baker Street, London", "Shoreditch, London", "Lodge Road, London", "Wellington Road, London", "Hollycroft Avenue, London", "Brent Street, London", "Woodfield Avenue, London", "Gresham Road, London" ]
+
 puts 'Starting seed file...'
 
 puts 'Clearing Bookings....'
@@ -50,14 +52,14 @@ file = JSON.parse(file_serialized.read)
   space_adjective = SPACE_ADJECTIVES.sample
   neighbourhood_adjective = NEIGHBOURHOOD_ADJECTIVES.sample
   home_synonym = HOME_SYNONYMS.sample
-  addresses = ["Oxford street, London", "Finsbury Park, London", "London Bridge", "Regent Street, London",
-  "Bond Street, London", "Baker Street, London"]
+
+
   listing = Listing.new(
     title: "#{space_adjective.capitalize} space in #{neighbourhood_adjective} #{home_synonym}",
     description: "This #{space_adjective} space is ideal for someone looking to spend the day working productively. You'll love spending time in this #{neighbourhood_adjective} #{home_synonym}, where a you'll be provided with a desk, chair and free coffee and tea. Book now to avoid dissapointment.",
     available: true,
-    rate: Faker::Number.between(from: 5, to: 65),
-    address_line_1: addresses.sample,
+    rate: Faker::Number.between(from: 3, to: 30),
+    address_line_1: ADDRESSES.sample,
     address_line_2: Faker::Address.secondary_address,
     postcode: Faker::Address.postcode,
     city: Faker::Address.city
