@@ -7,7 +7,18 @@
       <div class="d-none d-lg-block main-text">
          <h1>A Workspace Near You</h1>
          <p class="text-center lead">Find the perfect workspace nearby and access unique and stylish work environments to suit your needs</p>
-         <%= link_to 'See Listings', listings_path, class: 'btn sign-up mt-2' %>
+
+          <div class="search-bar-form">
+            <%= form_tag listings_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control border-radius-form",
+                placeholder: "Find your new desk"
+              %>
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+        </div>
+
       </div>
     </div>
     <div class="col-lg-6">
