@@ -10,7 +10,7 @@
 
 .booking-new-card {
   overflow: hidden;
-  height: 270px;
+  height: 300px;
   width: 700px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -23,7 +23,7 @@
 .booking-new-card img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 .booking-new-card h2 {
@@ -71,4 +71,11 @@
   // .price-color {
   //   color: #242039;
   // }
+}
+
+img.listing-card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
 }

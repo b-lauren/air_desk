@@ -2,7 +2,11 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @listings = Listing.all
+     if params[:query].present?
+      @listings = Listing.search_listings(params[:query])
+    else
+      @listings = Listing.all
+    end
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,

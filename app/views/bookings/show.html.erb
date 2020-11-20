@@ -3,13 +3,14 @@
  <%= cl_image_tag @listing.photos[0].key, width: 302, height: 400, crop: :fill %>
 
   <div class="booking-new-infos">
-    <h3>Congrats! You're Booked In</h3>
+    <h3>Congrats! You're All Booked In</h3>
         <p> <%= @listing.title %></p>
         <p> <%= @listing.description %></p>
         <p>Location: <%= @listing.city %></p>
         <p> £ <%= @listing.rate %> per day</p>
-        <p>You are booked from: <%= @booking.start_date %></p>
-        <p>You are leaving on: <%= @booking.end_date %></p>
+        <p> <strong> Total price: £ <%= @total_price %><strong></p>
+        <p>You are booked from: <%= @booking.start_date.strftime("%B %d, %Y") %></p>
+        <p>You are leaving on: <%= @booking.end_date.strftime("%B %d, %Y") %></p>
         <div class="back-button">
           <%= link_to "Back to Home", root_path, class: "sign-up back-button" %>
         </div>
