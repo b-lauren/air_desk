@@ -1,6 +1,6 @@
 <div class="main-container">
-  <div class="index-cards py-4">
-    <h4 class="text-center heading-varela p-4">View All of Our Desks</h4>
+  <div class="index-cards py-5 ml-4 mr-3">
+    <h3 class="text-center heading-varela p-4">View All of Our Desks</h3>
     <div class="cards-map rounded">
       <% @listings.each do |listing| %>
         <div class="card text-center">
@@ -8,7 +8,7 @@
             <%= cl_image_tag listing.photos[0].key, class: "w-100", height: 200, crop: :fill  %>
             <div class="card-body">
               <h5 class="card-title"><%= listing.title.capitalize %> </h5>
-              <p>£<%= listing.rate %></p>
+              <p id="price">£<%= listing.rate %></p>
             </div>
           <% end %>
         </div>

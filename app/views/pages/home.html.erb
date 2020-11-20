@@ -32,7 +32,7 @@
 
 <div class="container best-desks">
   <div class="favourite-desks pb-5">
-    <h4 class="text-center heading-varela">View Our Favourite Desks</h4>
+    <h2 class="text-center heading-varela">View Our Favourite Desks</h2>
     </div>
     <div class="cards
 
@@ -43,6 +43,8 @@
         <%= cl_image_tag listing.photos[0].key, width: 302, height: 200, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"><%= listing.title.capitalize %> </h5>
+             <p id="listing-address price-color"><%= listing.address_line_1 %></p>
+             <p>£<%= listing.rate %></p>
            </div>
         <% end %>
       </div>
