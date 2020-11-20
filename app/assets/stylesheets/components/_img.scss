@@ -1,3 +1,9 @@
 .single-listing-img {
-object-cover: fill;
+  object-cover: fill;
+}
+
+.listing-show-img {
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
 }
