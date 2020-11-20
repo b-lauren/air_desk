@@ -28,6 +28,10 @@ body {
   font-weight: 300;
 }
 
+.lead-text {
+  width: 300px;
+}
+
 .main-text {
   margin-top: 30px;
 }
@@ -37,6 +41,10 @@ body {
   color: white;
   border-radius: 8px;
   margin-left: 28px;
+
+  &:hover {
+    color: grey;
+  }
 }
 
 .cancel {
@@ -92,7 +100,7 @@ body {
 
 
 .card-title {
-  color: $navy;
+  color: black;
   margin-top: 10px;
 
   .card-title:hover {
@@ -100,10 +108,17 @@ body {
   }
 }
 
+.listing-address {
+  font-size: 20px;
+  color: #242039;
+  opacity: .7
+}
 
-
-
-
+.listing-rate {
+  color: #242039;
+  font-weight: bold;
+  opacity: .7
+}
 
 
 

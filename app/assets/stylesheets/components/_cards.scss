@@ -57,6 +57,7 @@
 
 .card  {
   border-radius: 10px;
+  // background-color: rgb(248,248,248);
 
   a {
     text-decoration: none;
@@ -66,6 +67,10 @@
     color: grey;
     transition-delay: 0.10;
   }
+
+  // .price-color {
+  //   color: #242039;
+  // }
 }
 
 img.listing-card-image {
@@ -74,43 +79,3 @@ img.listing-card-image {
     object-fit: cover;
     object-position: 50% 50%;
 }
-
-#bookings-card {
-   border-radius: 10px;
-}
-
-// # --> BELOW IS ALL RELATED TO BOOKING/INDEX
-
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-

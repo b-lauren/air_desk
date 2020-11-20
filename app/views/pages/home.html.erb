@@ -5,9 +5,26 @@
   <div class="row text-center align-items-center">
     <div class="col-lg-6">
       <div class="d-none d-lg-block main-text">
-         <h1>A Workspace Near You</h1>
-         <p class="text-center lead">Find the perfect workspace nearby and access unique and stylish work environments to suit your needs</p>
-         <%= link_to 'See Listings', listings_path, class: 'btn sign-up mt-2' %>
+        <h1>A Workspace Near You</h1>
+        <p class="text-center lead">Find the perfect workspace nearby and access unique and stylish work environments to suit your needs</p>
+       <div class="search-bar-container">
+          <div class="search-bar-form">
+            <%= form_tag listings_path, method: :get do %>
+            <div class="d-flex">
+              <div class="search-function">
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control border-radius-form",
+                  placeholder: "Search by keyword or address"
+                  %>
+                </div>
+                <div class="search-submit">
+                <%= submit_tag "Find Desk", class: "btn sign-up" %>
+                <% end %>
+              </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="col-lg-6">
@@ -32,7 +49,7 @@
 
 <div class="container best-desks">
   <div class="favourite-desks pb-5">
-    <h4 class="text-center heading-varela">View Our Favourite Desks</h4>
+    <h2 class="text-center heading-varela font-weight-normal">View Our Favourite Desks</h2>
     </div>
     <div class="cards
 
@@ -43,6 +60,8 @@
         <%= cl_image_tag listing.photos[0].key, width: 302, height: 200, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"><%= listing.title.capitalize %> </h5>
+             <p class="listing-address price-color"><%= listing.address_line_1 %></p>
+             <p class="listing-rate">£<%= listing.rate %></p>
            </div>
         <% end %>
       </div>

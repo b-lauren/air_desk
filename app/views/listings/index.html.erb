@@ -1,6 +1,6 @@
 <div class="main-container">
-  <div class="index-cards py-4">
-    <h4 class="text-center heading-varela p-4">View All of Our Desks</h4>
+  <div class="index-cards py-5 ml-4 mr-3">
+    <h3 class="text-center heading-varela p-4">View All of Our Desks</h3>
     <div class="cards-map rounded">
       <% @listings.each do |listing| %>
         <div class="card text-center">
@@ -9,7 +9,8 @@
               <%= cl_image_tag listing.photos[0].key, class: "listing-card-image"  %>
               <div class="card-body">
                 <h5 class="card-title"><%= listing.title.capitalize %> </h5>
-                <p>£<%= listing.rate %></p>
+                <p class="listing-address"><%= listing.address_line_1 %></p>
+                <p class="listing-rate">£<%= listing.rate %></p>
               </div>
             </div>
           <% end %>
@@ -17,7 +18,7 @@
       <% end %>
     </div>
   </div>
-  <div class="map-container">
+  <div class="map-container mb-5">
     <div id="map"
        style="width: 100%; height: 100vh;"
        data-markers="<%= @markers.to_json %>"

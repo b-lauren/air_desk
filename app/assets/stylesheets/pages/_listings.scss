@@ -18,6 +18,7 @@
 
 .main-container {
   display: flex;
+  justify-content: space-between;
 }
 
 .map-container {
@@ -38,3 +39,14 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+#street-color {
+  color: #242039;
+}
+
+
+
+.listings-show-image {
+  object-fit: cover;
+}
+
