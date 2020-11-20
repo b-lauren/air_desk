@@ -93,7 +93,7 @@ body {
 
 
 .card-title {
-  color: $navy;
+  color: black;
   margin-top: 10px;
 
   .card-title:hover {
@@ -101,10 +101,17 @@ body {
   }
 }
 
+.listing-address {
+  font-size: 20px;
+  color: #242039;
+  opacity: .7
+}
 
-
-
-
+.listing-rate {
+  color: #242039;
+  font-weight: bold;
+  opacity: .7
+}
 
 
 
