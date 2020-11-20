@@ -2,10 +2,8 @@
 <div class="banner">
   <div class="container">
     <div class="banner-flex-wrapper">
-      <div class="banner-content">
-        <h1>Air Desk <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-        <p>Change your life and learn to code at one of our campuses around the world.</p>
-        <a class="btn btn-flat" href="#">Apply now</a>
+      <div class="banner-content heading-varela">
+        <h2>Become a Host - <br>Add Your Desk Here</h2>
       </div>
       <div class="new-listing-wrapper">
         <div class="new-listing-form">
@@ -25,48 +23,6 @@
           <% end %>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="new-listing-container">
-  <div class="new-listing-image">
-    <p>Become a Host - Add Your Desk!</p>
-  </div>
-
-  <div class="new-listing-wrapper">
-    <div class="new-listing-form">
-      <div class="listing-form">
-         <%= simple_form_for(@listing) do |f| %>
-        <%= f.input :title, placeholder: "Title", label: false, input_html: {class: "border-radius-form"} %>
-        <%= f.input :description, placeholder: "Description", label: false, input_html: {class: "border-radius-form"} %>
-        <%= f.input :address_line_1, placeholder: "Address line 1", label: false, input_html: {class: "border-radius-form"} %>
-        <%= f.input :postcode, placeholder: "Postcode", label: false, input_html: {class: "border-radius-form"} %>
-        <%= f.input :rate, placeholder: "Daily rate", label: false, input_html: {class: "border-radius-form"} %>
-        <div class="new-listing-submit">
-          <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, input_html: {class: "photos-button"} %>
-         <!--  <div class="submit-button">
-            <input  class="" type="submit" name="commit" value="Create Listing" data-disable-with="Create Listing">
-          </div> -->
-        </div>
-        <div class="submit-button">
-            <input  class="create-listing-button" type="submit" name="commit" value="Create Listing" data-disable-with="Create Listing">
-          </div>
-      <% end %>
       </div>
     </div>
   </div>

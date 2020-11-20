@@ -11,31 +11,31 @@
                <%= f.input :first_name,
                             required: true,
                             autofocus: true,
-                            input_html: { autocomplete: "first name" }%>
+                            input_html: { autocomplete: "first name", class: "border-radius-form" }%>
             </div>
             <div class="col">
               <%= f.input :last_name,
                           required: true,
                           autofocus: true,
-                          input_html: { autocomplete: "last name" }%>
+                          input_html: { autocomplete: "last name", class: "border-radius-form" }%>
             </div>
             </div>
 
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" }%>
+                        input_html: { autocomplete: "email", class: "border-radius-form" }%>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password", class: "border-radius-form" } %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password", class: "border-radius-form" } %>
         </div>
 
       <div class="form-actions center-button">
-        <%= f.button :submit, "Sign Up", class: "btn sign-up" %>
+        <%= f.button :submit, "Sign Up", class: "btn sign-up mb-4" %>
       </div>
 
     <% end %>
