@@ -6,7 +6,7 @@ SPACE_ADJECTIVES = %w[pristine breathtaking detailed spacious bright refreshing 
 NEIGHBOURHOOD_ADJECTIVES = %w[inviting prestigious upscale beautiful historic picturesque safe]
 HOME_SYNONYMS = %w[home room building study house manor castle bedroom lounge]
 
-ADDRESSES = ["Oxford street, London", "Finsbury Park, London", "London Bridge", "Regent Street, London", "Bond Street, London", "Baker Street, London", "Shoreditch, London", "Lodge Road, London", "Wellington Road, London", "Hollycroft Avenue, London", "Brent Street, London", "Woodfield Avenue, London", "Gresham Road, London" ]
+ADDRESSES = ["Oxford Street, London", "Finsbury Park, London", "London Bridge", "Regent Street, London", "Bond Street, London", "Baker Street, London", "Shoreditch, London", "Lodge Road, London", "Wellington Road, London", "Hollycroft Avenue, London", "Brent Street, London", "Woodfield Avenue, London", "Gresham Road, London","Greenhill Road, London", "Tunley Road, London", "Bruce Road, London", "Drayton Road", "Essex Road, London", "Vivian Avenue, London" ]
 
 puts 'Starting seed file...'
 
